@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/Stocks.css";
 
 function Stocks() {
   const [stockId, setStockId] = useState("");
@@ -15,16 +16,24 @@ function Stocks() {
   };
 
   return (
-    <div>
-      <h1>Selecciona tu Stock</h1>
-      <input
-        type="text"
-        value={stockId}
-        onChange={(e) => setStockId(e.target.value)}
-        placeholder="ID del Stock"
-      />
-      <button onClick={fetchStock}>Consultar</button>
-      {result && <pre>{JSON.stringify(result, null, 2)}</pre>}
+    <div className="stocks-container">
+      <h1 className="stocks-title">Selecciona tu Stock</h1>
+      <div className="stocks-input-container">
+        <input
+          type="text"
+          className="stocks-input"
+          value={stockId}
+          onChange={(e) => setStockId(e.target.value)}
+          placeholder="ID del Stock"
+        />
+        <button className="stocks-button" onClick={fetchStock}>Consultar</button>
+      </div>
+      {result && (
+        <div className="stocks-result">
+          <h3>Resultado:</h3>
+          <pre>{JSON.stringify(result, null, 2)}</pre>
+        </div>
+      )}
     </div>
   );
 }

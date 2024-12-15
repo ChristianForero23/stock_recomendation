@@ -1,0 +1,21 @@
+.portfolio-container {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .portfolio-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+  }
+  
+  .portfolio-description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .portfolio-image img {
+    max-width: 100%;
+    border-radius: 5px;
+  }
+  
