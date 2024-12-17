@@ -1,2 +1,21 @@
-fastapi
-uvicorn[standard]
+# FastAPI framework y servidor Uvicorn
+fastapi==0.95.0
+uvicorn[standard]==0.22.0
+
+# ORM y migraciones
+sqlalchemy==1.4.46
+alembic==1.10.0
+
+# Validación de datos y correo electrónico
+pydantic[email]==1.10.9
+
+# Autenticación y manejo de JWT
+python-jose==3.3.0  # Para manejo de JWT
+passlib[bcrypt]==1.7.4  # Hashing seguro de contraseñas
+bcrypt==3.2.2  # Versión compatible con passlib
+
+# Servidor en producción con múltiples workers
+gunicorn==20.1.0
+
+# Driver de PostgreSQL
+psycopg2-binary==2.9.3

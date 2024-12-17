@@ -8,10 +8,10 @@ function Home() {
       <p className="home-description">
         Gestiona tu portafolio y selecciona las mejores acciones para invertir.
       </p>
-      <div className="home-buttons">
+      {/* <div className="home-buttons">
         <a href="/portfolio" className="button">Gestiona tu Portafolio</a>
         <a href="/stocks" className="button">Selecciona tu Stock</a>
-      </div>
+      </div> */}
     </div>
   );
 }
