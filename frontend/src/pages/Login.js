@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 function Login() {
@@ -8,6 +8,10 @@ function Login() {
   const [error, setError] = useState(null);
   const { login } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Extrae la ruta original desde el state
+  const from = location.state?.from?.pathname || "/"; // Si no hay ruta original, redirige a "/"
 
   const handleLogin = async () => {
     setError(null);
@@ -23,7 +27,7 @@ function Login() {
       const data = await response.json();
       login({ email }, data.access_token);
       alert("¡Inicio de sesión exitoso!");
-      navigate("/stocks");
+      navigate(from, { replace: true });
     } catch (err) {
       setError(err.message);
     }
