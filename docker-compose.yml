@@ -8,12 +8,13 @@ services:
       - "3000:80"
 
   nginx:
-    image: stock_recomentation_engine-frontend  # Usa la imagen generada para frontend
+    image: nginx:alpine #stock_recomentation_engine-frontend  # Usa la imagen generada para frontend
     container_name: nginx
     ports:
       - "80:80"
       - "443:443"
     volumes:
+      - ./frontend/build:/usr/share/nginx/html
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf  # Configuración personalizada
       - ./letsencrypt:/etc/letsencrypt                    # Certificados SSL
     depends_on:
@@ -39,3 +40,5 @@ services:
     container_name: backend3
     ports:
       - "8002:8000"
+
+#  ubuntu@ip-172-31-11-224:~/stock_recomentation_engine$ docker system prune

@@ -19,3 +19,6 @@ gunicorn==20.1.0
 
 # Driver de PostgreSQL
 psycopg2-binary==2.9.3
+
+#Requests
+requests

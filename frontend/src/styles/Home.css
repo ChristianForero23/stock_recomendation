@@ -12,6 +12,13 @@ body {
   background-color: #f9f9f9; /* Color de fondo sutil */
   color: #000; /* Color principal de texto */
 }
+.home-container {
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el área */
+  background-repeat: no-repeat; /* Evita repeticiones de la imagen */
+  background-position: center; /* Centra la imagen */
+  background-color: #f9f9f9; /* Color de respaldo si no carga la imagen */
+  width: 100%;
+}
 
 /* Estilo de la sección principal */
 .hero-section {
@@ -25,6 +32,10 @@ body {
   text-align: center;
   color: #ffffff; /* Texto blanco */
   position: relative;
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el área */
+  background-repeat: no-repeat; /* Evita repeticiones de la imagen */
+  background-position: center; /* Centra la imagen */
+  width: 100%;
 }
 
 .hero-section::before {
@@ -83,7 +94,7 @@ body {
 
 .technology-section {
   text-align: center;
-  padding: 2rem 2rem;
+  padding: 1rem 2rem;
   background-color: #f8f8fc; /* Color de fondo similar */
   color: #1b1b2f; /* Color oscuro para texto */
 }
@@ -94,11 +105,16 @@ body {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  padding: 0rem 2rem 1rem 0.5rem;
+/* Orden: arriba | derecha | abajo | izquierda */
 }
 
 @media (max-width: 768px) {
   .section-title {
     font-size: 2rem; /* Tamaño más pequeño en pantallas medianas */
+  }
+  .home-container {
+    padding: 0; /* Asegúrate de que no haya padding extra */
   }
 }
 
@@ -106,21 +122,26 @@ body {
   .section-title {
     font-size: 1.8rem; /* Tamaño aún más pequeño en móviles */
   }
+  .home-container {
+    padding: 0; /* Asegúrate de que no haya padding extra */
+  }
 }
-
+/* Ajustes generales para la sección Technology */
 .tech-container {
   display: flex;
-  justify-content: space-around; /* Espacio entre columnas */
+  justify-content: space-between; /* Espaciado entre columnas */
   align-items: center;
   text-align: center;
   border-top: 1px solid #ccc; /* Línea superior */
   padding-top: 2rem; /* Espacio después del título */
+  gap: 2rem; /* Espacio horizontal entre elementos */
 }
 
 .tech-item {
-  flex: 1;
-  margin: 0 1rem; /* Espaciado entre columnas */
+  flex: 1; /* Cada tarjeta ocupa el mismo ancho */
+  margin: 0;
   padding: 1rem;
+  position: relative; /* Necesario para la línea divisoria */
 }
 
 .tech-item img {
@@ -140,4 +161,33 @@ body {
   font-size: 1rem;
   color: #555;
   margin-top: 0.5rem;
+}
+
+/* Línea divisoria vertical */
+.tech-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px; /* Ancho de la línea */
+  height: 100%;
+  background-color: #ccc; /* Color de la línea */
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+  .tech-container {
+    flex-direction: column; /* Cambia a diseño vertical */
+    gap: 1.5rem; /* Reduce el espacio entre los elementos */
+  }
+
+  .tech-item {
+    flex: 1 1 100%; /* Cada tarjeta ocupa el 100% del ancho */
+    margin: 0 auto; /* Centra las tarjetas */
+    padding: 1rem;
+  }
+
+  .tech-item:not(:last-child)::after {
+    display: none; /* Oculta la línea divisoria en móvil */
+  }
 }

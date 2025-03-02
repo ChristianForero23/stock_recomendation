@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Home.css";
 import techImage1 from "../images/ad_analitycs.png";
-import techImage2 from "../images/ai_logo.jpg";
+import techImage2 from "../images/ai_logo.png";
 import techImage3 from "../images/optimization.png";
 import heroImage from "../images/fondo2.png"; // Imagen de fondo
 
